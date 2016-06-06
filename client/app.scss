@@ -1,0 +1,58 @@
+@import '~normalize.css/normalize.css';
+
+$blue: #0088cc;
+
+@import '~bulma/bulma.sass';
+
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
+html {
+    overflow-x: auto;
+    overflow-y: inherit;
+}
+
+body {
+    margin-top: 60px;
+}
+
+a {
+    color: $blue;
+}
+
+.icon {
+    margin-right: 5px;
+}
+
+.meta-item-list {
+    .tag {
+        margin-right: 20px;
+        margin-bottom: 10px;
+        min-width: 100px;
+        text-transform: capitalize;
+    }
+}
+
+.has-color {
+    .color-grey {
+        background-color: #f5f7fa;
+        color: #222;
+        border: 1px solid #ccc;
+    }
+    .color-sky {
+        background-color: #1fc8db;
+    }
+    .color-blue {
+        background-color: #42afe3;
+    }
+    .color-green {
+        background-color: #97cd76;
+    }
+    .color-yellow {
+        background-color: #fce473;
+        color: #222;
+    }
+    .color-red {
+        background-color: #ed6c63;
+    }
+}

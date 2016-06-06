@@ -1,0 +1,52 @@
+{
+  "name": "blogtiny",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm dist/*.{js,css}",
+    "test": "NODE_PATH=./client mocha --growl --compilers js:babel-core/register,css:test-js/css-null-compiler.js --require ./test-js/test_helper.js $(find client -path '*.spec.js')",
+    "dev": "./node_modules/.bin/webpack-dev-server --host 0.0.0.0 --port 8080 --devtool eval --content-base dist/ --progress --colors --hot",
+    "build": "NODE_ENV=production NODE_ENV=production ./node_modules/.bin/webpack",
+    "server": "source /usr/local/bin/virtualenvwrapper.sh && workon tinyblog && python manage.py runserver -h 0.0.0.0 -p 5000 -r"
+  },
+  "keywords": [],
+  "author": "Brijesh Bittu <brijeshb42@gmail.com> (http://bitwiser.in/)",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-react-transform": "^2.0.2",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "json-loader": "^0.5.4",
+    "node-sass": "^3.7.0",
+    "react-document-title": "^2.0.1",
+    "react-hot-loader": "^1.3.0",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "bulma": "git+https://git@github.com/jgthms/bulma.git",
+    "font-awesome": "^4.6.3",
+    "history": "^3.0.0",
+    "milligram": "git+https://git@github.com/milligram/milligram.git",
+    "moment": "^2.13.0",
+    "normalize.css": "^4.1.1",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.4.1",
+    "react-router-redux": "^4.0.4",
+    "react-select": "^1.0.0-beta13",
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0"
+  }
+}
