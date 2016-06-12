@@ -28,6 +28,10 @@ export const saveError = (result) => ({
   result,
 });
 
+export const reset = () => ({
+  type: A.RESET,
+});
+
 
 export const startFetch = () => {
   return (dispatch, getState) => {
@@ -59,6 +63,7 @@ export const startSave = (title) => {
     dispatch(savingStarted());
     Fetch.post('/categories/', {data: { title }}, (data) => {
       dispatch(saved(data.result));
+      Fetch.clear("/categories/");
     }, err => {
       console.log(err)
       dispatch(saveError(err.data.result || {title: "Some unknown error."}));

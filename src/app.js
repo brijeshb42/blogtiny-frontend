@@ -18,13 +18,7 @@ export default class App extends React.Component {
         <div className="">
           <Header />
           <div className="container is-fluid">
-            <div className="columns is-mobile">
-              <div className="column is-8 is-offset-2">
-                <section className="section">
-                  {this.props.children}
-                </section>
-              </div>
-            </div>
+            {this.props.children}
           </div>
         </div>
       </Title>

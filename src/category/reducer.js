@@ -4,6 +4,9 @@ const INITIAL_STATE = {
   items: [],
   fetching: false,
   fetched: false,
+  saving: false,
+  saved: true,
+  errors: {}
 };
 
 
@@ -25,6 +28,27 @@ export default (state=INITIAL_STATE, action) => {
         fetched: false,
         items: []
       });
+    case A.SAVING:
+      return Object.assign({}, state, {
+        saving: true,
+        saved: false,
+        errors: {},
+      });
+    case A.SAVED:
+      return Object.assign({}, state, {
+        saved: true,
+        saving: false,
+        items: [action.result].concat(state.items),
+        errors: {},
+      });
+    case A.SAVE_ERROR:
+      return Object.assign({}, state, {
+        saving: false,
+        saved: false,
+        errors: action.result
+      });
+    case A.RESET:
+      return INITIAL_STATE;
     default: return state;
   }
 }

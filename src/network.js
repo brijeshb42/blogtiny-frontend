@@ -1,7 +1,12 @@
 import 'isomorphic-fetch';
 
 // import { BASE_PATH } from 'constants/network';
-const BASE_PATH = "//localhost:5000/api/1.0"
+let BASE_PATH = "";
+if (__DEV__) {
+  BASE_PATH = "//localhost:5000/api/1.0";
+} else {
+  BASE_PATH = "/api/1.0";
+}
 
 let cache = {};
 
@@ -81,12 +86,12 @@ const Fetch = {
       });
       key = key.slice(0, -1);
     }
-    // if (cache.hasOwnProperty(key)) {
-    //   if (typeof success === 'function') {
-    //     success.call(context, cache[key]);
-    //     return;
-    //   }
-    // }
+    if (cache.hasOwnProperty(key)) {
+      if (typeof success === 'function') {
+        success.call(context, cache[key]);
+        return;
+      }
+    }
     const ftch = method(key, 'get', options);
     sendFetch(ftch, success, error, context, true, key);
   },

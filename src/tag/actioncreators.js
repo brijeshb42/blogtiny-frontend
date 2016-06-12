@@ -28,6 +28,10 @@ export const saveError = (result) => ({
   result,
 });
 
+export const reset = () => ({
+  type: A.RESET,
+});
+
 
 export const startFetch = () => {
   return (dispatch, getState) => {
@@ -59,6 +63,7 @@ export const startSave = (title) => {
     dispatch(savingStarted());
     Fetch.post('/tags/', {data: { title }}, (data) => {
       dispatch(saved(data.result));
+      Fetch.clear('/tags/');
     }, err => {
       console.log(err)
       dispatch(saveError(err.data.result || {title: "Some unknown error."}));

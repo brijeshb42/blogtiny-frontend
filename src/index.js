@@ -11,6 +11,7 @@ import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
 // import createBrowserHistory from 'history/lib/createBrowserHistory';
 import { useRouterHistory } from 'react-router';
 
+import Fetch from 'network';
 import App from 'app';
 import reducers from 'reducers';
 import Routes from 'routes';

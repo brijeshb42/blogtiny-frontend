@@ -7,13 +7,30 @@ $blue: #0088cc;
 $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome";
 
-html {
-    overflow-x: auto;
-    overflow-y: inherit;
-}
+// html {
+//     overflow-x: auto;
+//     overflow-y: inherit;
+// }
 
 body {
-    margin-top: 60px;
+    margin-top: 80px;
+    padding: 0 10px;
+}
+
+::-webkit-input-placeholder {
+   text-transform: capitalize;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-transform: capitalize;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-transform: capitalize;
+}
+
+:-ms-input-placeholder {  
+   text-transform: capitalize;
 }
 
 a {
@@ -55,4 +72,27 @@ a {
     .color-red {
         background-color: #ed6c63;
     }
+}
+
+
+.article-list {
+    .card {
+        margin-bottom: 10px;
+    }
+    max-width: 800px;
+}
+
+.category-list {
+    max-width: 600px;
+}
+
+.center-align {
+    margin: 0 auto;
+}
+
+
+.close-mini {
+    cursor: pointer;
+    float: right;
+    margin-right: 10px;
 }

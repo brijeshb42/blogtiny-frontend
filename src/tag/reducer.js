@@ -47,6 +47,8 @@ export default (state=INITIAL_STATE, action) => {
         saved: false,
         errors: action.result
       });
+    case A.RESET:
+      return INITIAL_STATE;
     default: return state;
   }
 }

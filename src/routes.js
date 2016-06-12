@@ -2,6 +2,7 @@ import React from 'react';
 import { Router, Route, IndexRoute } from 'react-router';
 
 import App from 'app';
+import NotFound from 'components/notfound';
 
 const logPageView = () => {
   console.log(window.location.pathname + window.location.search);
@@ -33,6 +34,13 @@ export default ({ history }) => (
         });
       }}
       />
+      <Route path="articles/new" getComponent={(location, cb) => {
+        require.ensure([], (require) => {
+          cb(null, require('editor').default);
+        });
+      }}
+      />
+      <Route path="*" component={NotFound} />
     </Route>
   </Router>
 );
