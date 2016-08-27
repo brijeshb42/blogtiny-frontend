@@ -57,6 +57,7 @@ export class AuthorPage extends React.Component {
                     <th>Name</th>
                     <th>Email</th>
                     <th>Slug</th>
+                    <th>Public</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
@@ -66,6 +67,7 @@ export class AuthorPage extends React.Component {
                     <td>{author.name}</td>
                     <td><a href={ "mailto:" + author.email}>{author.email}</a></td>
                     <td>{author.slug}</td>
+                    <td><input type="checkbox" readOnly checked={author.public_email} disabled /></td>
                     <td>
                       <button
                         className="button is-info is-small"

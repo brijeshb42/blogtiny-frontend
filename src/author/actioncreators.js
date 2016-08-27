@@ -92,6 +92,7 @@ export const createAuthor = () => {
       name: data.name,
       email: data.email,
       slug: data.slug,
+      public_email: data.public_email,
     }}, (resp) => {
       if (data.id > 0) {
         dispatch(updated(resp.result));

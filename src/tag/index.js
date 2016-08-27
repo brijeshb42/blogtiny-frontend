@@ -45,7 +45,7 @@ export class TagPage extends React.Component {
     // }
     return (
       <Title title={fetching ? "Loading Tags..." : "Tags"}>
-        <Wrapper className="panel center-align category-list">
+        <Wrapper className="card center-align category-list">
           <h5 className="title is-5">Tags</h5>
           <div className="columns">
             <div className="column">

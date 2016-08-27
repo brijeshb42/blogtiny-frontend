@@ -42,7 +42,7 @@ export class CategoryPage extends React.Component {
     }
     return (
       <Title title={fetching ? "Loading Categories..." : "Categories List"}>
-        <Wrapper className="panel center-align category-list">
+        <Wrapper className="card center-align category-list">
           <h5 className="title is-5">Categories</h5>
           <div className="columns">
             <div className="column">

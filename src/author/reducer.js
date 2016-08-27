@@ -5,6 +5,7 @@ const getEmptyAuthor = () => ({
   name: '',
   email: '',
   slug: '',
+  public_email: true,
 });
 
 

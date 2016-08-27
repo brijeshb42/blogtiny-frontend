@@ -6,7 +6,7 @@ $blue: #0088cc;
 
 $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome";
-
+@import "~draft-js/dist/Draft.css";
 // html {
 //     overflow-x: auto;
 //     overflow-y: inherit;
@@ -95,4 +95,10 @@ a {
     cursor: pointer;
     float: right;
     margin-right: 10px;
+}
+
+.control {
+    label {
+        text-transform: capitalize;
+    }
 }

@@ -36,13 +36,15 @@ export default class AuthorForm extends React.Component {
         <form className="card-content" onSubmit={this.onSubmit}>
           <h6 className="title is-6">{author.id < 0 ? "Create New Author" : "Edit Author"}</h6>
           {Object.keys(author).map((key) => {
-            if (key === 'id') {
+            if (key === 'id' || key === 'public_email') {
               return null;
             }
             const itemError = errors[key] ? true : false;
             return (
               <p className="control" key={key}>
+                <label htmlFor={"user-" + key }>{key.split('_').join(' ')}</label>
                 <input
+                  id={"user-" + key }
                   className={ "input" + (itemError ? " is-danger" : "") }
                   ref={key}
                   type="text"
@@ -57,6 +59,14 @@ export default class AuthorForm extends React.Component {
               </p>
             );
           })}
+          <p className="control">
+            <label>
+              Make Email Public
+              <input type="checkbox" checked={author.public_email} onChange={e => {
+                this.props.onChange('public_email', !author.public_email);
+              }} />
+            </label>
+          </p>
           <p className="control">
             <button className="button is-primary" type="submit">
               {author.id < 0 ? "Create" : "Update"}
