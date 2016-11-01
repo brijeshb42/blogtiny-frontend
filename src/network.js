@@ -20,7 +20,9 @@ const method = (url, method='get', options={}) => {
   }
   const opt = {
     method: method,
-    headers: {},
+    headers: {
+      'X-Requested-With': 'XMLHttpRequest',
+    },
   };
   if (!options.form) {
     opt.headers['Content-Type'] = contentType;

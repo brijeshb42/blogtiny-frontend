@@ -4,8 +4,7 @@ import React from 'react';
 import Title from 'react-document-title';
 import {
   Editor,
-  createEmptyContent,
-  createWithContent,
+  createEditorState,
 } from 'medium-draft';
 
 import Wrapper from 'components/basewrapper';
@@ -16,7 +15,7 @@ export default class ArticleEditor extends React.Component {
     super(props);
 
     this.state = {
-      editorState: createEmptyContent(),
+      editorState: createEditorState(),
     };
 
     this.onChange = (editorState) => {
@@ -24,9 +23,9 @@ export default class ArticleEditor extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   this.refs.editor.focus();
-  // }
+  componentDidMount() {
+    this.refs.editor.focus();
+  }
 
   render() {
     const { editorState } = this.state;

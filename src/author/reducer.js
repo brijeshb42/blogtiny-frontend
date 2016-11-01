@@ -5,7 +5,7 @@ const getEmptyAuthor = () => ({
   name: '',
   email: '',
   slug: '',
-  public_email: true,
+  public_email: false,
 });
 
 
@@ -21,6 +21,7 @@ const INITIAL_STATE = {
 };
 
 export default (state=INITIAL_STATE, action) => {
+  console.log(action);
   switch(action.type) {
     case A.FETCHING:
       return Object.assign({}, state, {
@@ -99,6 +100,7 @@ export default (state=INITIAL_STATE, action) => {
           name: state.items[action.index].name,
           email: state.items[action.index].email,
           slug: state.items[action.index].slug,
+          public_email: state.items[action.index].public_email,
         },
         errors: {},
       });

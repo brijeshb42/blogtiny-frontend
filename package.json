@@ -40,7 +40,7 @@
     "font-awesome": "^4.6.3",
     "history": "^3.0.0",
     "immutable": "^3.7.6",
-    "medium-draft": "^0.3.3",
+    "medium-draft": "^0.3.12",
     "milligram": "git+https://git@github.com/milligram/milligram.git",
     "moment": "^2.13.0",
     "normalize.css": "^4.1.1",
